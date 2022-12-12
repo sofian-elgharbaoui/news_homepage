@@ -1,1 +1,127 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "open sans", sans-serif;
+}
+
+.container {
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p {
+  color: #777;
+}
+p::first-letter {
+  text-transform: uppercase;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  text-transform: capitalize;
+}
+nav a {
+  color: #777;
+}
+nav a:hover {
+  color: #f15d51;
+}
+
+.content {
+  display: grid;
+  grid-template-areas: "bigImg bigImg sideNews" "question quickInfo sideNews" "topic1 topic2 topic3";
+  gap: 2em;
+  margin-top: 1em;
+}
+.content > img {
+  width: 100%;
+  grid-area: bigImg;
+}
+.content > .side-news {
+  grid-area: sideNews;
+  background-color: #00001a;
+  color: #fff;
+  padding: 1em;
+}
+.content > .side-news h1 {
+  color: #e28e24;
+}
+.content > .side-news .topic {
+  padding: 1em 0;
+}
+.content > .side-news .topic:nth-of-type(2) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa transparent;
+}
+.content > .side-news h3 {
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+.content > .side-news h3:hover a {
+  color: #e28e24;
+}
+.content > h1 {
+  grid-area: question;
+  align-self: center;
+  font-weight: 900;
+  font-size: 40px;
+}
+.content > .quick-info {
+  grid-area: quickInfo;
+}
+.content > .quick-info a {
+  padding: 1em 2em;
+  background-color: #f15d51;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 2em;
+}
+.content > .quick-info a:hover {
+  background-color: #00001a;
+}
+.content > .topic {
+  display: flex;
+}
+.content > .topic.topic1 {
+  grid-area: topic1;
+}
+.content > .topic.topic2 {
+  grid-area: topic2;
+}
+.content > .topic.topic3 {
+  grid-area: topic3;
+}
+.content > .topic img {
+  width: 30%;
+  height: 90%;
+  margin-right: 1em;
+}
+.content > .topic h2 {
+  color: #aaa;
+}
+.content > .topic h4 {
+  font-weight: 900;
+  margin: 5px 0;
+}
+
+/*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */

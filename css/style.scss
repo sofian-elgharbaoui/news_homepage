@@ -1,1 +1,150 @@
+@use "./scss/functions" as *;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "open sans", sans-serif;
+}
+
+.container {
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p {
+  color: #777;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4em;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    text-transform: capitalize;
+  }
+
+  a {
+    color: #777;
+    &:hover {
+      color: #f15d51;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "bigImg bigImg sideNews"
+    "question quickInfo sideNews"
+    "topic1 topic2 topic3";
+  gap: 2em;
+  margin-top: 1em;
+
+  > img {
+    width: 100%;
+    grid-area: bigImg;
+  }
+
+  > .side-news {
+    grid-area: sideNews;
+    background-color: #00001a;
+    color: #fff;
+    padding: 1em;
+
+    h1 {
+      color: #e28e24;
+    }
+    .topic {
+      padding: 1em 0;
+      &:nth-of-type(2) {
+        border: {
+          width: 1px;
+          style: solid;
+          color: #aaa transparent;
+        }
+      }
+    }
+    h3 {
+      text-transform: capitalize;
+      padding-bottom: 10px;
+      &:hover a {
+        color: #e28e24;
+      }
+    }
+  }
+  > h1 {
+    grid-area: question;
+    align-self: center;
+    font: {
+      weight: 900;
+      size: 40px;
+    }
+  }
+
+  > .quick-info {
+    grid-area: quickInfo;
+    a {
+      padding: 1em 2em;
+      background-color: #f15d51;
+      display: block;
+      width: fit-content;
+      margin-top: 2em;
+
+      &:hover {
+        background-color: #00001a;
+      }
+    }
+  }
+
+  > .topic {
+    display: flex;
+
+    &.topic1 {
+      grid-area: topic1;
+    }
+
+    &.topic2 {
+      grid-area: topic2;
+    }
+
+    &.topic3 {
+      grid-area: topic3;
+    }
+
+    img {
+      $width: 30%;
+      width: $width;
+      height: doubleWidth($width);
+      margin-right: 1em;
+    }
+
+    h2 {
+      color: #aaa;
+    }
+
+    h4 {
+      font-weight: 900;
+      margin: 5px 0;
+    }
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
