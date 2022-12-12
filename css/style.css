@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: "open sans", sans-serif;
+  font-family: "inter", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -14,11 +15,15 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: hsl(36deg, 100%, 99%);
+}
+
+img {
+  display: block;
 }
 
 p {
-  color: #777;
+  color: hsl(236deg, 13%, 42%);
 }
 p::first-letter {
   text-transform: uppercase;
@@ -30,18 +35,39 @@ header {
   align-items: center;
   height: 4em;
 }
-
-nav ul {
+header nav img {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  header nav img {
+    display: none;
+  }
+}
+header nav ul {
   list-style: none;
   display: flex;
   gap: 1em;
   text-transform: capitalize;
+  transition: right 0.3s;
 }
-nav a {
-  color: #777;
+@media (max-width: 767px) {
+  header nav ul {
+    flex-direction: column;
+    background-color: hsl(36deg, 100%, 99%);
+    position: absolute;
+    right: -150px;
+    top: 0;
+    width: 150px;
+    height: 100vh;
+    padding: 1em;
+  }
 }
-nav a:hover {
-  color: #f15d51;
+header nav a {
+  color: hsl(236deg, 13%, 42%);
+  display: block;
+}
+header nav a:hover {
+  color: hsl(5deg, 85%, 63%);
 }
 
 .content {
@@ -62,12 +88,12 @@ nav a:hover {
 }
 .content > .side-news {
   grid-area: sideNews;
-  background-color: #00001a;
-  color: #fff;
+  background-color: hsl(240deg, 100%, 5%);
+  color: hsl(36deg, 100%, 99%);
   padding: 1em;
 }
 .content > .side-news h1 {
-  color: #e28e24;
+  color: hsl(35deg, 77%, 62%);
 }
 .content > .side-news .topic {
   padding: 1em 0;
@@ -82,7 +108,10 @@ nav a:hover {
   padding-bottom: 10px;
 }
 .content > .side-news h3:hover a {
-  color: #e28e24;
+  color: hsl(35deg, 77%, 62%);
+}
+.content > .side-news p {
+  color: hsl(233deg, 8%, 79%);
 }
 .content > h1 {
   grid-area: question;
@@ -95,7 +124,7 @@ nav a:hover {
 }
 .content > .quick-info a {
   padding: 1em 2em;
-  background-color: #f15d51;
+  background-color: hsl(5deg, 85%, 63%);
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -103,7 +132,7 @@ nav a:hover {
   margin-top: 2em;
 }
 .content > .quick-info a:hover {
-  background-color: #00001a;
+  background-color: hsl(240deg, 100%, 5%);
 }
 .content > .topic {
   display: flex;
@@ -130,14 +159,17 @@ nav a:hover {
   }
 }
 .content > .topic h2 {
-  color: #aaa;
+  color: hsl(233deg, 8%, 79%);
 }
 .content > .topic h4 {
   font-weight: 900;
   margin: 5px 0;
 }
+.content > .topic h4:hover {
+  color: hsl(5deg, 85%, 63%);
+}
 .content > .topic p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */

@@ -6,8 +6,18 @@
   box-sizing: border-box;
 }
 
+// colors
+$Soft-orange: hsl(35, 77%, 62%);
+$Sof-red: hsl(5, 85%, 63%);
+
+$off-white: hsl(36, 100%, 99%);
+$grayish-blue: hsl(233, 8%, 79%);
+$dark-grayish-blue: hsl(236, 13%, 42%);
+$very-dark-blue: hsl(240, 100%, 5%);
+
 body {
-  font-family: "open sans", sans-serif;
+  font-family: "inter", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -16,11 +26,15 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: $off-white;
+}
+
+img {
+  display: block;
 }
 
 p {
-  color: #777;
+  color: $dark-grayish-blue;
   &::first-letter {
     text-transform: uppercase;
   }
@@ -31,20 +45,40 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 4em;
-}
 
-nav {
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 1em;
-    text-transform: capitalize;
-  }
+  nav {
+    img {
+      cursor: pointer;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
 
-  a {
-    color: #777;
-    &:hover {
-      color: #f15d51;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      text-transform: capitalize;
+      transition: right 0.3s;
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        background-color: $off-white;
+        position: absolute;
+        right: -150px;
+        top: 0;
+        width: 150px;
+        height: 100vh;
+        padding: 1em;
+      }
+    }
+
+    a {
+      color: $dark-grayish-blue;
+      display: block;
+      &:hover {
+        color: $Sof-red;
+      }
     }
   }
 }
@@ -70,12 +104,12 @@ nav {
 
   > .side-news {
     grid-area: sideNews;
-    background-color: #00001a;
-    color: #fff;
+    background-color: $very-dark-blue;
+    color: $off-white;
     padding: 1em;
 
     h1 {
-      color: #e28e24;
+      color: $Soft-orange;
     }
     .topic {
       padding: 1em 0;
@@ -91,8 +125,11 @@ nav {
       text-transform: capitalize;
       padding-bottom: 10px;
       &:hover a {
-        color: #e28e24;
+        color: $Soft-orange;
       }
+    }
+    p {
+      color: $grayish-blue;
     }
   }
   > h1 {
@@ -108,13 +145,13 @@ nav {
     grid-area: quickInfo;
     a {
       padding: 1em 2em;
-      background-color: #f15d51;
+      background-color: $Sof-red;
       display: block;
       width: fit-content;
       margin-top: 2em;
 
       &:hover {
-        background-color: #00001a;
+        background-color: $very-dark-blue;
       }
     }
   }
@@ -144,16 +181,19 @@ nav {
     }
 
     h2 {
-      color: #aaa;
+      color: $grayish-blue;
     }
 
     h4 {
       font-weight: 900;
       margin: 5px 0;
+      &:hover {
+        color: $Sof-red;
+      }
     }
 
     p {
-      font-size: 14px;
+      font-size: 15px;
     }
   }
 }
