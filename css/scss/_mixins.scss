@@ -1,0 +1,7 @@
+@use "./functions" as *;
+
+@mixin imgchange($width) {
+  width: $width;
+  height: doubleWidth($width);
+  margin-right: 1em;
+}

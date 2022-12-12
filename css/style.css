@@ -47,8 +47,14 @@ nav a:hover {
 .content {
   display: grid;
   grid-template-areas: "bigImg bigImg sideNews" "question quickInfo sideNews" "topic1 topic2 topic3";
-  gap: 2em;
-  margin-top: 1em;
+  gap: 1.5em;
+  margin: 1em 0;
+}
+@media (max-width: 767px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .content > img {
   width: 100%;
@@ -112,9 +118,16 @@ nav a:hover {
   grid-area: topic3;
 }
 .content > .topic img {
-  width: 30%;
-  height: 90%;
+  width: 100px;
+  height: 150px;
   margin-right: 1em;
+}
+@media (max-width: 768px) {
+  .content > .topic img {
+    width: 60px;
+    height: 90px;
+    margin-right: 1em;
+  }
 }
 .content > .topic h2 {
   color: #aaa;
@@ -122,6 +135,9 @@ nav a:hover {
 .content > .topic h4 {
   font-weight: 900;
   margin: 5px 0;
+}
+.content > .topic p {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=style.css.map *//*# sourceMappingURL=style.css.map */

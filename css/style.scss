@@ -1,4 +1,4 @@
-@use "./scss/functions" as *;
+@use "./scss/mixins" as *;
 
 * {
   margin: 0;
@@ -55,8 +55,13 @@ nav {
     "bigImg bigImg sideNews"
     "question quickInfo sideNews"
     "topic1 topic2 topic3";
-  gap: 2em;
-  margin-top: 1em;
+  gap: 1.5em;
+  margin: 1em 0;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   > img {
     width: 100%;
@@ -130,10 +135,12 @@ nav {
     }
 
     img {
-      $width: 30%;
-      width: $width;
-      height: doubleWidth($width);
-      margin-right: 1em;
+      @include imgchange(100px);
+      @media (max-width: 768px) {
+        & {
+          @include imgchange(60px);
+        }
+      }
     }
 
     h2 {
@@ -143,6 +150,10 @@ nav {
     h4 {
       font-weight: 900;
       margin: 5px 0;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 }
